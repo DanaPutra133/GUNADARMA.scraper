@@ -65,7 +65,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 async function scrapeData(kelas) {
-    const url = `https://baak.gunadarma.ac.id/cariMhsBaru?_token=l42EnRlgByQHUQGmXlNnns4jZW4nW18gL0rRIGd3&tipeMhsBaru=Kelas&teks=${kelas}`;
+    const url = `http://baak.gunadarma.ac.id/cariKelasBaru?_token=e4UmgXi5OuZT99yTzFWFIiWygaLlN62fqISYdgsI&tipeKelasBaru=Nama&teks=${nama}`;
 
     try {
         // Melakukan permintaan GET
@@ -82,11 +82,10 @@ async function scrapeData(kelas) {
             if (tds.length > 0) {
                 const data = {
                     no: $(tds[0]).text(),
-                    id: $(tds[1]).text(),
+                    npm: $(tds[1]).text(),
                     nama: $(tds[2]).text().trim(),
-                    nim: $(tds[3]).text(),
-                    kelas: $(tds[4]).text(),
-                    program: $(tds[5]).text().trim(),
+                    kelas_lama: $(tds[3]).text().trim(),
+                    kelas_baru: $(tds[4]).text().trim(),
                 };
                 
                 console.log(data); // Menampilkan data siswa
@@ -94,10 +93,10 @@ async function scrapeData(kelas) {
         });
 
     } catch (error) {
-        console.error('masukan kelas:', error);
+        console.error('masukan nama:', error);
     }
 }
 
 // Ganti 'Kelas' dengan kelas yang ingin Anda masukkan
-const kelas = '1ka11'; 
-scrapeData(kelas);
+const nama = 'input nama'; 
+scrapeData(nama);
