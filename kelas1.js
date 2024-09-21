@@ -70,8 +70,8 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-async function scrapeData(nama) {
-    const url = `http://baak.gunadarma.ac.id/cariKelasBaru?_token=e4UmgXi5OuZT99yTzFWFIiWygaLlN62fqISYdgsI&tipeKelasBaru=Nama&teks=${nama}`;
+async function scrapeData(kelas) {
+    const url = `https://baak.gunadarma.ac.id/cariMhsBaru?_token=l42EnRlgByQHUQGmXlNnns4jZW4nW18gL0rRIGd3&tipeMhsBaru=Kelas&teks=${kelas}`;
 
     try {
         // Melakukan permintaan GET
@@ -88,10 +88,11 @@ async function scrapeData(nama) {
             if (tds.length > 0) {
                 const data = {
                     no: $(tds[0]).text(),
-                    npm: $(tds[1]).text(),
+                    id: $(tds[1]).text(),
                     nama: $(tds[2]).text().trim(),
-                    kelas_lama: $(tds[3]).text().trim(),
-                    kelas_baru: $(tds[4]).text().trim(),
+                    nim: $(tds[3]).text(),
+                    kelas: $(tds[4]).text(),
+                    program: $(tds[5]).text().trim(),
                 };
                 
                 console.log(data); // Menampilkan data siswa
@@ -99,13 +100,12 @@ async function scrapeData(nama) {
         });
 
     } catch (error) {
-        console.error('masukan nama:', error);
+        console.error( error);
     }
 }
 
-// Meminta input dari pengguna
-rl.question('Masukkan nama: ', (inputNama) => {
-    scrapeData(inputNama).then(() => {
+rl.question('masukan kelas dari mahasiswa baru: ', (inputkelas) => {
+    scrapeData(inputkelas).then(() => {
         rl.close(); // Menutup interface readline setelah selesai
     });
 });
