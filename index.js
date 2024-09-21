@@ -63,6 +63,12 @@
 
 const axios = require('axios');
 const cheerio = require('cheerio');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
 async function scrapeData(kelas) {
     const url = `https://baak.gunadarma.ac.id/cariMhsBaru?_token=l42EnRlgByQHUQGmXlNnns4jZW4nW18gL0rRIGd3&tipeMhsBaru=Kelas&teks=${kelas}`;
@@ -98,6 +104,8 @@ async function scrapeData(kelas) {
     }
 }
 
-// Ganti 'Kelas' dengan kelas yang ingin Anda masukkan
-const kelas = '1ka11'; 
-scrapeData(kelas);
+rl.question('Masukkan kelas: ', (inputkelas) => {
+    scrapeData(inputkelas).then(() => {
+        rl.close(); // Menutup interface readline setelah selesai
+    });
+});

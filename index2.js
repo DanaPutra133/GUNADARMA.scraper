@@ -63,8 +63,14 @@
 
 const axios = require('axios');
 const cheerio = require('cheerio');
+const readline = require('readline');
 
-async function scrapeData(kelas) {
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+async function scrapeData(nama) {
     const url = `http://baak.gunadarma.ac.id/cariKelasBaru?_token=e4UmgXi5OuZT99yTzFWFIiWygaLlN62fqISYdgsI&tipeKelasBaru=Nama&teks=${nama}`;
 
     try {
@@ -97,6 +103,9 @@ async function scrapeData(kelas) {
     }
 }
 
-// Ganti 'Kelas' dengan kelas yang ingin Anda masukkan
-const nama = 'input nama'; 
-scrapeData(nama);
+// Meminta input dari pengguna
+rl.question('Masukkan nama: ', (inputNama) => {
+    scrapeData(inputNama).then(() => {
+        rl.close(); // Menutup interface readline setelah selesai
+    });
+});
