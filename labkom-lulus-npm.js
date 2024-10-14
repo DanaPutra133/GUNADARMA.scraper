@@ -10,7 +10,7 @@ const rl = readline.createInterface({
 });
 
 
-// const npm = '10123290';
+// const npm = ''; kalau mau gak inout var ini pakai aja
 // URL yang akan di-scrape
 async function scrapeData(npm) {
     const url =  `https://vm.lepkom.gunadarma.ac.id/kelulusan/search/${npm}`;
