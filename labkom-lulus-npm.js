@@ -19,13 +19,10 @@ async function scrapeData(npm) {
     try {
         // Fetch HTML dari halaman
         const { data } = await axios.get(url);
-
-        // Load HTML ke cheerio untuk parsing
         const $ = cheerio.load(data);
 
         // Array untuk menampung hasil
         let results = [];
-        
         // Variabel pembatas jumlah hasil (maksimal 4)
         let count = 0;
 
@@ -33,32 +30,28 @@ async function scrapeData(npm) {
         $('tbody tr').each((index, element) => {
             // Membatasi hasil hanya sampai 4
             if (count >= 2) {
-                return false; // Menghentikan loop jika sudah mencapai 4 hasil
+                return false; // Menghentikan loop jika sudah mencapai 2 hasil
+                //jadi kalau 2 hasil result nya juga 2
             }
-
             const tds = $(element).find('td');
-
-            // Mengecek apakah ada data dalam tabel
             if (tds.length > 0) {
                 const result = {
                 no: $(tds[0]).text().trim(), 
                 npm: $(tds[1]).text().trim(),
                 nama: $(tds[2]).text().trim(),
                 kelas: $(tds[3]).text().trim(),
-                semester_periode: $(tds[4]).text().replace(/\s+/g, ' ').trim(),
+                semester_periode: $(tds[4]).text().replace(/\s+/g, ' ').trim(), //replace(/\s+/g, ' '). buat hasil nya gak ada \t\t\t\t\
                 materi_kursus: $(tds[5]).text().trim(),
                 wilayah: $(tds[6]).text().trim(),
-                status_kelulusan: $(tds[7]).find('b').text().trim(),  // Mengambil teks dalam elemen <b> untuk status kelulusan
-                tanggal_ambil_sertifikat: $(tds[8]).find('b').text().trim(),  // Mengambil teks dalam elemen <b> untuk tanggal ambil sertifikat
+                status_kelulusan: $(tds[7]).find('b').text().trim(),  
+                tanggal_ambil_sertifikat: $(tds[8]).find('b').text().trim(),  
                 };
-
-                // Menambahkan hasil ke array results
                 results.push(result);
-                count++; // Menambah jumlah hasil yang sudah diambil
+                count++;
             }
         });
 
-        // Cetak hasil sebagai JSON (maksimal 4 hasil)
+        // Cetak hasil sebagai JSON (maksimal 2)
         console.log(JSON.stringify(results, null, 2));
 
     } catch (error) {
@@ -66,8 +59,9 @@ async function scrapeData(npm) {
 }
 }
 
-rl.question('Masukkan nama mahasiswa semester 3: ', (inputNpm) => {
+//buat input
+rl.question('Masukkan npm mahasiswa: ', (inputNpm) => {
     scrapeData(inputNpm).then(() => {
-        rl.close(); // Menutup interface readline setelah selesai
+        rl.close(); 
     });
 });
