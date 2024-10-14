@@ -44,7 +44,7 @@ async function scrapeData(npm) {
 }
 
 // Meminta input dari pengguna
-rl.question('Masukkan nama mahasiswa semester 3: ', (inputNpm) => {
+rl.question('Masukkan npm mahasiswa semester 3: ', (inputNpm) => {
     scrapeData(inputNpm).then(() => {
         rl.close(); // Menutup interface readline setelah selesai
     });
