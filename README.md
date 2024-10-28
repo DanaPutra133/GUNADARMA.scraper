@@ -66,11 +66,11 @@ Output JSON:
 ```json
 [
   {
-    no: "1",
-    npm: "npm",
-    nama: "nama",
-    kelas_lama: "kelas lama dia",
-    kelas_baru: "kelas baru dia"
+    "no": "1",
+    "npm": "npm",
+    "nama": "nama",
+    "kelas_lama": "kelas lama dia",
+    "kelas_baru": "kelas baru dia"
   }
 ]
 ```
