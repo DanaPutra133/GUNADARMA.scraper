@@ -22,11 +22,10 @@ Tools web scraping untuk mengambil data jadwal kursus mahasiswa dari platform LE
    git clone https://github.com/DanaPutra133/GUNADARMA.scraper.git
    ```
 
-2. Instal module:
+2. Install module:
 
-   ```bash
-   cd GUNADARMA.scraper
-   npm install
+   ```
+    npm install
    ```
 
 ## Cara Penggunaan
@@ -34,7 +33,7 @@ Tools web scraping untuk mengambil data jadwal kursus mahasiswa dari platform LE
 1. Jalankan scraper dengan NPM atau kode kelas tertentu:
 
    ```javascript
-   node "nama file nya".js
+   node nama file nya.js
    ```
 
 2. Sesuaikan skrip untuk mengambil data yang diinginkan.
@@ -65,6 +64,7 @@ Output JSON:
 Output JSON:
 
 ```json
+[
   {
     no: '1',
     npm: 'npm',
