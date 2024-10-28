@@ -25,7 +25,7 @@ Tools web scraping untuk mengambil data jadwal kursus mahasiswa dari platform LE
 2. Install module:
 
    ```
-npm install
+   npm install
    ```
 
 ## Cara Penggunaan
