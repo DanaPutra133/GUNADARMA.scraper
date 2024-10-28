@@ -25,7 +25,7 @@ Tools web scraping untuk mengambil data jadwal kursus mahasiswa dari platform LE
 2. Install module:
 
    ```
-    npm install
+npm install
    ```
 
 ## Cara Penggunaan
@@ -66,16 +66,16 @@ Output JSON:
 ```json
 [
   {
-    no: '1',
-    npm: 'npm',
-    nama: 'nama',
-    kelas_lama: 'kelas lama dia',
-    kelas_baru: 'kelas baru dia'
+    no: "1",
+    npm: "npm",
+    nama: "nama",
+    kelas_lama: "kelas lama dia",
+    kelas_baru: "kelas baru dia"
   }
 ]
 ```
 
 ## Kontribusi
 
-Silakan kirimkan isu atau pull request untuk perbaikan atau fitur tambahan.
+Silakan kirimkan isu atau pull request untuk perbaikan atau fitur tambahan ya :D happy code!.
 
