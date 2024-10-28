@@ -1,6 +1,6 @@
 # GUNADARMA.scraper
 
-Tools web scraping untuk mengambil data jadwal kursus mahasiswa dari platform LEBKOM Universitas Gunadarma dan BAAK. Proyek ini menggunakan Node.js dengan Axios dan Cheerio untuk mem-parsing HTML dan mengekstrak data berdasarkan NPM atau nomor kelas tertentu.
+Tools web scraping untuk mengambil data jadwal kursus mahasiswa dari platform LEBKOM Universitas Gunadarma dan BAAK. scraper ini menggunakan Node.js dengan Axios dan Cheerio untuk scrape HTML dan menarik data berdasarkan NPM atau nomor kelas tertentu.
 
 ## Fitur
 
