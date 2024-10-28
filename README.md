@@ -1,51 +1,81 @@
-```GUNADARMA.scraper```
+# GUNADARMA.scraper
 
-Alat web scraping untuk mengambil data jadwal kursus mahasiswa dari platform LEPKOM Universitas Gunadarma. Proyek ini menggunakan Node.js dengan Axios dan Cheerio untuk mem-parsing HTML dan mengekstrak data berdasarkan NPM atau kode kelas tertentu.
+Tools web scraping untuk mengambil data jadwal kursus mahasiswa dari platform LEBKOM Universitas Gunadarma dan BAAK. Proyek ini menggunakan Node.js dengan Axios dan Cheerio untuk mem-parsing HTML dan mengekstrak data berdasarkan NPM atau nomor kelas tertentu.
 
-Fitur
+## Fitur
 
-Mengambil data jadwal dalam format JSON.
-Menyediakan informasi seperti npm, nama, kelas, jadwal_kursus, kategori_kursus, lokasi, dan lainnya.
-Mudah dikonfigurasi untuk berbagai kelas atau mahasiswa.
-Persyaratan
+- Mengambil data jadwal dalam format JSON.
+- Menyediakan informasi seperti `npm`, `nama`, `kelas`, `jadwal_kursus`, `kategori_kursus`, `lokasi`, dan lainnya.
+- Mudah dikonfigurasi untuk berbagai kelas atau mahasiswa.
 
-Node.js
-Axios
-Cheerio
-Instalasi
+## Package
 
-Clone repositori:
-bash
-Copy code
-git clone https://github.com/DanaPutra133/GUNADARMA.scraper.git
-Instal dependensi:
-bash
-Copy code
-cd GUNADARMA.scraper
-npm install
-Cara Penggunaan
+- Node.js
+- Axios
+- Cheerio
 
-Jalankan scraper dengan NPM atau kode kelas tertentu:
-javascript
-Copy code
-node scraper.js
-Sesuaikan skrip untuk mengambil data yang diinginkan.
-Contoh Hasil
+## cara install
+
+1. Clone repositori:
+
+   ```bash
+   git clone https://github.com/DanaPutra133/GUNADARMA.scraper.git
+   ```
+
+2. Instal module:
+
+   ```bash
+   cd GUNADARMA.scraper
+   npm install
+   ```
+
+## Cara Penggunaan
+
+1. Jalankan scraper dengan NPM atau kode kelas tertentu:
+
+   ```javascript
+   node "nama file nya".js
+   ```
+
+2. Sesuaikan skrip untuk mengambil data yang diinginkan.
+
+## Contoh Hasil dari LABKOM
 
 Output JSON:
 
-json
+```json
 [
   {
     "no": "1",
-    "npm": "10123290",
-    "nama": "DANA PUTRA SATRIA GATTI",
-    "kelas": "2KA14",
+    "npm": "npm",
+    "nama": "nama",
+    "kelas": "kelas",
     "jadwal_kursus": "DATABASE FOR BEGINNER / 1DBBR231514K",
     "kategori_kursus": "REGULER / KULIAH",
-    "lokasi": "DEPOK",
-    "hari": "JUMAT",
-    "ruang": "F491",
-    "sesi": "4"
+    "lokasi": "lokasi",
+    "hari": "hari",
+    "ruang": "ruangan",
+    "sesi": "sesi"
   }
 ]
+```
+
+## Contoh Hasil dari BAAK
+
+Output JSON:
+
+```json
+  {
+    no: '1',
+    npm: 'npm',
+    nama: 'nama',
+    kelas_lama: 'kelas lama dia',
+    kelas_baru: 'kelas baru dia'
+  }
+]
+```
+
+## Kontribusi
+
+Silakan kirimkan isu atau pull request untuk perbaikan atau fitur tambahan.
+
