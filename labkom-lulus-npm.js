@@ -65,3 +65,49 @@ rl.question('Masukkan npm mahasiswa: ', (inputNpm) => {
         rl.close(); 
     });
 });
+
+
+
+
+
+// const axios = require('axios');
+// const cheerio = require('cheerio');
+
+// const npm = '10123290';
+//     const url =  `https://vm.lepkom.gunadarma.ac.id/kelulusan/search/${npm}`;
+
+//     try {
+//         const { data } = await axios.get(url);
+//         const $ = cheerio.load(data);
+//         let results = [];
+//         let count = 0;
+//         $('tbody tr').each((index, element) => {
+//             // Membatasi hasil hanya sampai 4
+//             if (count >= 2) {
+//                 return false; 
+//             }
+//             const tds = $(element).find('td');
+//             if (tds.length > 0) {
+//                 const result = {
+//                 no: $(tds[0]).text().trim(), 
+//                 npm: $(tds[1]).text().trim(),
+//                 nama: $(tds[2]).text().trim(),
+//                 kelas: $(tds[3]).text().trim(),
+//                 semester_periode: $(tds[4]).text().replace(/\s+/g, ' ').trim(), //replace(/\s+/g, ' '). buat hasil nya gak ada \t\t\t\t\
+//                 materi_kursus: $(tds[5]).text().trim(),
+//                 wilayah: $(tds[6]).text().trim(),
+//                 status_kelulusan: $(tds[7]).find('b').text().trim(),  
+//                 tanggal_ambil_sertifikat: $(tds[8]).find('b').text().trim(),  
+//                 };
+//                 results.push(result);
+//                 count++;
+//             }
+//         });
+//        return(JSON.stringify(results, null, 2));
+
+//     } catch (error) {
+//         console.error('Terjadi kesalahan saat melakukan scraping:', error);
+// }
+
+
+
