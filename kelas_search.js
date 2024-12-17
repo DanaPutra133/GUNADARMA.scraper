@@ -45,7 +45,7 @@ async function scrapeData(kelas) {
 }
 
 // Meminta input dari pengguna
-rl.question('Masukkan kelas kamu: ', (inputkelas) => {
+rl.question('Masukkan kelas/ nama dosen kamu: ', (inputkelas) => {
     scrapeData(inputkelas).then(() => {
         rl.close(); // Menutup interface readline setelah selesai
     });
